@@ -8,8 +8,10 @@ public class RatMovement : MonoBehaviour
     //comment: strg + k, strg + c
     //uncomment: strg + k, strg + u
     public int velocity;
+    private bool dead;
 
     public GameObject Plattform;
+    public Rigidbody2D Character;
 
     private float plattform_width;
     private float plattform_x;
@@ -24,19 +26,27 @@ public class RatMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((velocity > 0 && transform.position.x > x_right )||(velocity < 0 && transform.position.x < x_left))
+        if (!dead)
         {
-            velocity = velocity * (-1);
-        }
+            if ((velocity > 0 && transform.position.x > x_right) || (velocity < 0 && transform.position.x < x_left))
+            {
+                velocity = velocity * (-1);
+            }
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
+
+        }
+        else
+        {
+            transform.Rotate(0, 0, 1);
+        }
 
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject geht auch mit tag
-        if (collision.gameObject.name == "Plattform")
+   
+        if (collision.gameObject.layer == 6)
         {
             Plattform = collision.gameObject;
             plattform_width = Plattform.GetComponent<SpriteRenderer>().bounds.size.x;
@@ -44,13 +54,25 @@ public class RatMovement : MonoBehaviour
 
             setPath(plattform_x, plattform_width);
 
+
         }
 
         if (collision.gameObject.name == "Character")
         {
-            velocity = velocity * (-1);
+            Character = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (Character.velocity.y < 0)
+            {
+                dead = true;
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -5f);
+                Character.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+                Destroy(gameObject, 1);
+            }
+            else
+            {
+                velocity = velocity * (-1);
+            }
         }
-
        
     }
 
@@ -62,6 +84,11 @@ public class RatMovement : MonoBehaviour
         x_left = platf_x - (platf_width / 2)+ (rat_width/2);
         x_right = platf_x + (platf_width / 2) - (rat_width / 2);
     }
+
+    //private void disable()
+    //{
+    //    Destroy();
+    //}
 
 
 }
