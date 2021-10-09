@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8543191623871450922}
   - component: {fileID: 8543191623871450901}
   m_Layer: 0
-  m_Name: Worm
+  m_Name: Worm(anim)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
