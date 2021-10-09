@@ -18,6 +18,9 @@ public class PowerUp : MonoBehaviour
         Debug.Log("picked up!");
 
         SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
+        Movement playerMovement = player.GetComponent<Movement>();
+
+        playerMovement.dashEnabled = true;
         playerSpriteRenderer.color = Color.green;
 
         Destroy(gameObject);
