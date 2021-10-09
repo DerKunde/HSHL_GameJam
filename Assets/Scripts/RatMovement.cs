@@ -34,6 +34,7 @@ public class RatMovement : MonoBehaviour
             if ((velocity > 0 && transform.position.x > x_right) || (velocity < 0 && transform.position.x < x_left))
             {
                 velocity = velocity * (-1);
+                transform.Rotate(new Vector3(0, 180, 0));
             }
 
             GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);

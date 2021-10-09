@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 6d57533632716d843a447c67821997e3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6331025550020542433
+    second: SLOTMACHINE PICTOGRAMS_1
+  - first:
+      213: -2068171256562284914
+    second: SLOTMACHINE PICTOGRAMS_2
+  - first:
+      213: -3317038525123762777
+    second: SLOTMACHINE PICTOGRAMS_3
+  - first:
+      213: -4376596153387104350
+    second: SLOTMACHINE PICTOGRAMS_4
+  - first:
+      213: 2508870626065595139
+    second: SLOTMACHINE PICTOGRAMS_5
+  - first:
+      213: 931490498733546065
+    second: SLOTMACHINE PICTOGRAMS_6
+  - first:
+      213: 4208633595074047688
+    second: SLOTMACHINE PICTOGRAMS_7
+  - first:
+      213: -1865837956593384895
+    second: SLOTMACHINE PICTOGRAMS_8
+  - first:
+      213: 209959745895520021
+    second: SLOTMACHINE PICTOGRAMS_9
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_0
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 13321
+        width: 1225
+        height: 1562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c0606d147178130800000000000000
+      internalID: 3568846801245441098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_1
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 11719
+        width: 1213
+        height: 1414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f108a133ecda328a0800000000000000
+      internalID: -6331025550020542433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 10064
+        width: 2139
+        height: 1299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e868ee523316c43e0800000000000000
+      internalID: -2068171256562284914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_3
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 8460
+        width: 1658
+        height: 1189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a566bb290387f1d0800000000000000
+      internalID: -3317038525123762777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_4
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 6706
+        width: 1147
+        height: 1486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a745089cf43343c0800000000000000
+      internalID: -4376596153387104350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_5
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 5255
+        width: 1031
+        height: 985
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b3d06ba8c41d220800000000000000
+      internalID: 2508870626065595139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_6
+      rect:
+        serializedVersion: 2
+        x: 4401
+        y: 13688
+        width: 1984
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a1aa06ca15dec00800000000000000
+      internalID: 931490498733546065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_7
+      rect:
+        serializedVersion: 2
+        x: 4433
+        y: 11716
+        width: 1810
+        height: 1335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cee928d4f1186a30800000000000000
+      internalID: 4208633595074047688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_8
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 9630
+        width: 1661
+        height: 1051
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1428fcc93463b16e0800000000000000
+      internalID: -1865837956593384895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLOTMACHINE PICTOGRAMS_9
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 7315
+        width: 1015
+        height: 1686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517db37c64de9e200800000000000000
+      internalID: 209959745895520021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
