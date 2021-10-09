@@ -60,16 +60,16 @@ public class SlotMachine : MonoBehaviour
             time += Time.fixedDeltaTime;
             if (time > 1 && !rolling)
             {
-                animatorSlotOne.GetComponent<Animator>().SetBool("rolling", true);
-                animatorSlotTwo.GetComponent<Animator>().SetBool("rolling", true);
+                animatorSlotOne.GetComponent<Animator>().SetBool("animationRolling", true);
+                animatorSlotTwo.GetComponent<Animator>().SetBool("animationRolling", true);
                 animator.SetBool("animationRunning", false);
                 time = 0;
                 rolling = true;
             }
             if (time > 1 && rolling)
             {
-                animatorSlotOne.GetComponent<Animator>().SetBool("rolling", false);
-                animatorSlotTwo.GetComponent<Animator>().SetBool("rolling", false);
+                animatorSlotOne.GetComponent<Animator>().SetBool("animationRolling", false);
+                animatorSlotTwo.GetComponent<Animator>().SetBool("animationRolling", false);
                 time = 0;
                 rolling = false;
                 started = false;

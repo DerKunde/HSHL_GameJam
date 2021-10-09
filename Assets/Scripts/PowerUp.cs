@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] GameObject pickupEffect;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -15,7 +14,6 @@ public class PowerUp : MonoBehaviour
 
     void Pickup(Collider2D player)
     {
-        //Instantiate(pickupEffect, transform.position, transform.rotation);
 
         Debug.Log("picked up!");
 
