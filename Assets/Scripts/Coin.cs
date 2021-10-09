@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
     private Vector2 vel;
     private AudioSource audioSource;
     private AudioClip coinSound;
+    private Animator anim;
 
     private void Start()
     {
@@ -19,13 +20,14 @@ public class Coin : MonoBehaviour
         vel = new Vector2(1,0);
         audioSource = GameObject.Find("SFX").transform.GetChild(1).GetComponent<AudioSource>();
         coinSound = audioSource.clip;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (player.GetComponent<PlayerStats>().coins > tooManyCoins)
         {
-            ChangeColliderSize(7);
+            ChangeColliderSize(120);
         }
 
         if (flyingCoin)
@@ -42,7 +44,9 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            if(GetComponent<CircleCollider2D>().radius > 0.5f)
+            anim.enabled = false;
+
+            if(GetComponent<CircleCollider2D>().radius > 12.7f)
             {
                 flyingCoin = true;
             }
