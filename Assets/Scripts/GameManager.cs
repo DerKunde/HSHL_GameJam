@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     {
         loadedScenes.Add(SceneIndices.Root);
         LoadLevel(new List<int>(){(int) SceneIndices.MainMenu});
+
+        
     }
     
     public void LoadLevel(List<int> loadLevels)
@@ -82,5 +84,12 @@ public class GameManager : MonoBehaviour
     public static void PlayerDied()
     {
         //ToDo: Do whatever happens when Player dies
+    }
+
+    public void GetDamage()
+    {
+        int currHealth = playerState.GetCurrHealth();
+        playerState.SetHealth(currHealth-1);
+        
     }
 }

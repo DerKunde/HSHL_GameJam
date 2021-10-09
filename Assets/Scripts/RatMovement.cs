@@ -83,6 +83,7 @@ public class RatMovement : MonoBehaviour
             }
             else
             {
+                collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
                 velocity = velocity * (-1);
                 attacking = false;
             }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerStateSO : ScriptableObject
 {
     [SerializeField] private int _coins;
-    [SerializeField] private int _currHealth;
+    [SerializeField] public int _currHealth;
     [SerializeField] private int _maxHealth;
     
 
@@ -18,9 +18,15 @@ public class PlayerStateSO : ScriptableObject
         set => SetHealth(value);
     }
 
-    private void SetHealth(int value)
+    public int GetCurrHealth()
+    {
+        return _currHealth;
+    }
+
+    public void SetHealth(int value)
     {
         _currHealth = Mathf.Clamp(value, 0, _maxHealth);
+        Debug.Log(_currHealth);
         if (_currHealth.Equals(0))
             GameManager.PlayerDied();
     }
@@ -34,7 +40,7 @@ public class PlayerStateSO : ScriptableObject
         set => SetCoins(value);
     }
 
-    private void SetCoins(int value)
+    public void SetCoins(int value)
     {
         //ToDo: Checks if Player has to many coins => apply negative effects | and vise versa
         _coins = value;
