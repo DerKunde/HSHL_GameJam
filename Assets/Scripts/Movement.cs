@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
 
     public bool dashEnabled = false;
     public bool doubleJumpEnabled = false;
-    
 
     private void Awake()
     {
