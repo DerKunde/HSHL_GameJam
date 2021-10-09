@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a44d3ea8a040d6e4d93def57ff464bba
+  - enabled: 1
+    path: Assets/Scenes/CollectCoins.unity
+    guid: f60f22f578406b645b4994385a42b737
   m_configObjects: {}
