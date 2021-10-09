@@ -30,6 +30,9 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float groundCheckDist = .1f;
     [SerializeField] private bool isGrounded = true;
+
+    public bool dashEnabled = false;
+    public bool doubleJumpEnabled = false;
     
 
     private void Awake()
@@ -56,13 +59,13 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && canJump && isGrounded && !Input.GetAxisRaw("Vertical").Equals(-1f))
             Jump();
 
-        if (Input.GetButtonDown("Jump") && !isGrounded && canJump && canDoubleJump)
+        if (doubleJumpEnabled && Input.GetButtonDown("Jump") && !isGrounded && canJump && canDoubleJump)
             DoubleJump();
 
         if (Input.GetAxisRaw("Vertical").Equals(-1f))
             Fall();
 
-        if (Input.GetButtonDown("Dash") && !Input.GetAxisRaw("Horizontal").Equals(0f) && canDash)
+        if (dashEnabled && Input.GetButtonDown("Dash") && !Input.GetAxisRaw("Horizontal").Equals(0f) && canDash)
             Dash();
         
         _move = Input.GetAxis("Horizontal");

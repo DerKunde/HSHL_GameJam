@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class BatAI : MonoBehaviour
+public class BatDynamic : MonoBehaviour
 {
     public Transform target;
 
-    public float speed = 200f;
+    [Header("Distance (5 = easy, 6 = normal, 7 = hard)")]
+    public float attackableDistance = 5;
+
+    [Header("Speed of Bat")]
+    [Range(400f, 600f)]
+    public float speed;
+
     public float nextWaypointDistance = 3f;
 
     Path path;
@@ -17,27 +23,34 @@ public class BatAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    bool onTheWay = false;
+    bool attacking = false;
     float distanceBatAndChar;
 
-    Vector2 startpoint;
+    private Vector3 startpoint;
+ 
 
-    // Start is called before the first frame update
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
         target = GameObject.Find("Character").transform;
 
-      //  InvokeRepeating("UpdatePath", 0f, .5f);
+        startpoint = rb.transform.position;
         
     }
     void UpdatePath()
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            if (attack(target, transform))
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
+            }
+            else
+            {
+                seeker.StartPath(rb.position, startpoint, OnPathComplete);
+            }
         }
     }
 
@@ -53,18 +66,17 @@ public class BatAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        if(onTheWay && !attack(target, this.transform))
+        
+        if(attacking && !attack(target, transform) && (Vector2.Distance(startpoint, transform.position) < 2))
         {
-            reachedEndOfPath = true;
-            onTheWay = false;
-            Debug.Log("konnte fliehen");
+            Debug.Log("Invokes get cancelled");
             CancelInvoke("UpdatePath");
+            attacking = false;
         }
-        if (!onTheWay && attack(target, this.transform))
+
+        if (!attacking && attack(target, transform))
         {
-            onTheWay = true;
-            startpoint = transform.position;
+            attacking = true;
             InvokeRepeating("UpdatePath", 0f, .5f);
         }
 
@@ -96,12 +108,8 @@ public class BatAI : MonoBehaviour
     {
         distanceBatAndChar = Vector2.Distance(character.position, bat.position);
 
-        if (distanceBatAndChar <= 5) return true;
+        if (distanceBatAndChar <= 7) return true;
         else return false;
     }
 
-    void flyBack()
-    {
-
-    }
 }
