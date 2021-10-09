@@ -34,12 +34,15 @@ public class Movement : MonoBehaviour
     public bool dashEnabled = false;
     public bool doubleJumpEnabled = false;
 
+    public bool debuff_enemies_to_character = false;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _groundTrigger = GetComponent<BoxCollider2D>();
         defaultGravityScale = _rb.gravityScale;
+
     }
 
     private void Update()

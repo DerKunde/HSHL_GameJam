@@ -9,6 +9,7 @@ public class RatMovement : MonoBehaviour
     //uncomment: strg + k, strg + u
     public int velocity;
     private bool dead;
+    private bool attacking = false;
 
     public GameObject Plattform;
     public Rigidbody2D Character;
@@ -18,6 +19,8 @@ public class RatMovement : MonoBehaviour
 
     private float x_left;
     private float x_right;
+
+    private float directionToChar;
     void Start()
     {
         if (velocity == 0) velocity = 2;
@@ -26,7 +29,7 @@ public class RatMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!dead && !attacking)
         {
             if ((velocity > 0 && transform.position.x > x_right) || (velocity < 0 && transform.position.x < x_left))
             {
@@ -36,9 +39,13 @@ public class RatMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
 
         }
-        else
+        else if(dead)
         {
             transform.Rotate(0, 0, 1);
+        }
+        else if (attacking)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
         }
 
     }
@@ -46,7 +53,7 @@ public class RatMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
    
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6) //plattform
         {
             Plattform = collision.gameObject;
             plattform_width = Plattform.GetComponent<SpriteRenderer>().bounds.size.x;
@@ -54,6 +61,7 @@ public class RatMovement : MonoBehaviour
 
             setPath(plattform_x, plattform_width);
 
+            Plattform.GetComponent<PlatformRat>().isRatPlatform = true;
 
         }
 
@@ -67,10 +75,16 @@ public class RatMovement : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -5f);
                 Character.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 Destroy(gameObject, 1);
+                if(Plattform != null)
+                {
+                    Plattform.GetComponent<PlatformRat>().isRatPlatform = false;
+                    Debug.Log("no longer rat platform");
+                }
             }
             else
             {
                 velocity = velocity * (-1);
+                attacking = false;
             }
         }
        
@@ -85,10 +99,24 @@ public class RatMovement : MonoBehaviour
         x_right = platf_x + (platf_width / 2) - (rat_width / 2);
     }
 
-    //private void disable()
-    //{
-    //    Destroy();
-    //}
+    void attackCharacter(float character_x)
+    {
+        attacking = true;
+        directionToChar = character_x - transform.position.x;
+        Debug.Log("direction: " + directionToChar);
+        if(directionToChar > 0)
+        {
+            velocity = 2;
+        }else
+        {
+            velocity = -2;
+        }
+    }
+    void stopAttacking()
+    {
+        attacking = false;
+    }
+
 
 
 }
