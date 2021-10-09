@@ -16,6 +16,8 @@ public class BatDynamic : MonoBehaviour
 
     public float nextWaypointDistance = 3f;
 
+    public Transform batGFX;
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -101,6 +103,15 @@ public class BatDynamic : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
+        }
+
+        if (rb.velocity.x >= 0.05f)
+        {
+            transform.localScale = new Vector3(-0.05f, 0.05f, 1);
+        }
+        else if (rb.velocity.x < -0.01f)
+        {
+            transform.localScale = new Vector3(0.05f, 0.05f, 1);
         }
     }
 
