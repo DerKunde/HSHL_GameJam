@@ -9,8 +9,7 @@ public class Coin : MonoBehaviour
     private GameObject player;
     private bool flyingCoin;
     private Vector2 vel;
-    private AudioSource audioSource;
-    private AudioClip coinSound;
+    private PlaySound coinSound;
     private Animator anim;
 
     private void Start()
@@ -18,8 +17,7 @@ public class Coin : MonoBehaviour
         player = GameObject.Find("Character");
         flyingCoin = false;
         vel = new Vector2(1,0);
-        audioSource = GameObject.Find("SFX").transform.GetChild(1).GetComponent<AudioSource>();
-        coinSound = audioSource.clip;
+        coinSound = GameObject.Find("SFX").GetComponent<PlaySound>();
         anim = GetComponent<Animator>();
     }
 
@@ -64,7 +62,7 @@ public class Coin : MonoBehaviour
 
     private void CollectCoin()
     {
-        audioSource.PlayOneShot(coinSound);
+        coinSound.PlayCoinSound();
         player.GetComponent<PlayerStats>().coins++;
         Destroy(gameObject);
     }
