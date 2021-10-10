@@ -586,11 +586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[3]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[4]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[5]

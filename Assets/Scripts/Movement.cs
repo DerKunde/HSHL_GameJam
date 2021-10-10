@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
 
     [SerializeField] private float jumpForce = 20f;
-    [SerializeField] private float jumpCooldown = .2f;
+    [SerializeField] public float jumpCooldown = .2f;
     [SerializeField] private bool canJump = true;
     [SerializeField] private bool canDoubleJump = true;
     
@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     public bool dashEnabled = false;
     public bool doubleJumpEnabled = false;
     public bool shieldEnabled = false;
+    public bool castJumpEnabled = false;
 
     public bool debuff_enemies_to_character = false;
 
@@ -43,7 +44,6 @@ public class Movement : MonoBehaviour
         _collider = GetComponent<CapsuleCollider2D>();
         _groundTrigger = GetComponent<BoxCollider2D>();
         defaultGravityScale = _rb.gravityScale;
-
     }
 
     private void Update()
