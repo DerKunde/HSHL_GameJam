@@ -20,13 +20,9 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] GameObject animatorSlotTwo;
     [SerializeField] GameObject animatorSlotThree;
 
-<<<<<<< Updated upstream
-    [SerializeField] GameObject shield, dash, ram, d_jump, f_run, sloMo, magnet, jump_worse, enemy_magnet, s_run;
     private PlaySound sound;
-=======
     [SerializeField] GameObject shield, dash, d_jump, magnet, jump_worse, enemy_magnet;
     [SerializeField] GameObject de_buffBar;
->>>>>>> Stashed changes
 
     private void Awake()
     {
