@@ -52,7 +52,6 @@ public class Coin : MonoBehaviour
         // if (collision.gameObject == player)
         if (collision.gameObject.name == "Character")
         {
-            Debug.Log("collision");
 
             anim.enabled = false;
 
@@ -74,9 +73,12 @@ public class Coin : MonoBehaviour
 
     private void CollectCoin()
     {
-        coinSound.PlayCoinSound();
+        //coinSound.PlayCoinSound();
         //player.GetComponent<PlayerStats>().coins++;
-        player.GetComponent<GetGameManager>().gameManager.getCoins(1);
-        Destroy(gameObject);
+        if (player.GetComponent<GetGameManager>().gameManager != null)
+        {
+            player.GetComponent<GetGameManager>().gameManager.getCoins(1);
+            Destroy(gameObject);
+        }
     }
 }

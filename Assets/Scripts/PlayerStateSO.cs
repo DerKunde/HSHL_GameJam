@@ -28,7 +28,7 @@ public class PlayerStateSO : ScriptableObject
     public void SetHealth(int value)
     {
         _currHealth = Mathf.Clamp(value, 0, _maxHealth);
-        Debug.Log(_currHealth);
+        Debug.Log("health: " + _currHealth);
         if (_currHealth.Equals(0))
             GameManager.PlayerDied();
     }
@@ -51,7 +51,7 @@ public class PlayerStateSO : ScriptableObject
             negativeCoinEffected = true;
         else negativeCoinEffected = false;
 
-        Debug.Log(_coins);
+        Debug.Log("coins: " + _coins);
     }
 
     public int GetCurrCoins()
