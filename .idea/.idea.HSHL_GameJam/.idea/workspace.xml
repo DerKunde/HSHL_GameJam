@@ -20,14 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b17393de-0ae2-4651-bf7e-c9265528c05b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HSHL_GameJam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSHL_GameJam/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HSHL_GameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSHL_GameJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/CurrState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/CurrState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/SaveState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/SaveState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStateSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStateSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/Bat/Bat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/Bat/Bat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/NewRat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/NewRat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/Plattformen/Plattform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/Plattformen/Plattform.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presets/Worm/Worm(anim).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/Worm/Worm(anim).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
