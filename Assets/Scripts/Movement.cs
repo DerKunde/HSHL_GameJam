@@ -122,7 +122,7 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        sound.PlayFootstepsSound();
+        //sound.PlayFootstepsSound();
         _rb.velocity = _move * moveSpeed * Vector2.right + _rb.velocity.y * Vector2.up;
     }
 
