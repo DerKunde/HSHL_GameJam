@@ -6,26 +6,33 @@ public class SlotMachine : MonoBehaviour
 {
     int randInt, prizelength;
     public string prizeWon;
-    float time;
+    float time, powerUpTimer;
     bool started, rolling, startable;
     Animator animator;
     Collider2D player;
     Vector3 aim;
     GameObject icon;
 
+    [SerializeField] float powerUpTime;
     [SerializeField] List<string> prizes;
     [SerializeField] List<float> chance;
     [SerializeField] GameObject animatorSlotOne;
     [SerializeField] GameObject animatorSlotTwo;
     [SerializeField] GameObject animatorSlotThree;
 
+<<<<<<< Updated upstream
     [SerializeField] GameObject shield, dash, ram, d_jump, f_run, sloMo, magnet, jump_worse, enemy_magnet, s_run;
     private PlaySound sound;
+=======
+    [SerializeField] GameObject shield, dash, d_jump, magnet, jump_worse, enemy_magnet;
+    [SerializeField] GameObject de_buffBar;
+>>>>>>> Stashed changes
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         time = 0;
+        powerUpTimer = 0;
         startable = false;
         started = false;
         rolling = false;
@@ -67,11 +74,6 @@ public class SlotMachine : MonoBehaviour
                     icon = dash1;
                     playerMovement.dashEnabled = true;
                     break;
-                case "Ram":
-                    GameObject ram1 = Instantiate(ram);
-                    icon = ram1;
-                    //playerMovement.ramEnabdled = true
-                    break;
                 case "DoubleJump":
                     GameObject d_jump1 =Instantiate(d_jump);
                     icon = d_jump1;
@@ -93,6 +95,8 @@ public class SlotMachine : MonoBehaviour
                     //enable enemy magnet
                     break;
             }
+            de_buffBar = Instantiate(de_buffBar);
+            de_buffBar.SetActive(true);
             icon.transform.position = player.transform.position;
             StartCoroutine(PrizeAnimation());
         }
@@ -146,6 +150,17 @@ public class SlotMachine : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (prizeWon != "")
+        {
+            powerUpTimer += Time.fixedDeltaTime;
+            if(powerUpTimer > powerUpTime)
+            {
+                DelPowerUp();
+                de_buffBar.SetActive(false);
+            }
+            de_buffBar.transform.localScale = new Vector3((powerUpTime-powerUpTimer)/10, .2f, 1);
+            de_buffBar.transform.position = new Vector3(player.GetComponent<Movement>().transform.position.x, player.GetComponent<Movement>().transform.position.y + 1f, player.GetComponent<Movement>().transform.position.z);
+        }
         if (started)
         {
             startable = false;
@@ -170,5 +185,19 @@ public class SlotMachine : MonoBehaviour
                 getPrize();
             }
         }
+    }
+
+    void DelPowerUp()
+    {
+        if (player == null) return;
+        var playerMovement = player.GetComponent<Movement>();
+        prizeWon = "";
+        playerMovement.shieldEnabled = false;
+        playerMovement.dashEnabled = false;
+        playerMovement.doubleJumpEnabled = false;
+        //disable coin magnet
+        playerMovement.jumpCooldown = .2f;
+        //disable enemy magnet
+        powerUpTimer = 0;
     }
 }

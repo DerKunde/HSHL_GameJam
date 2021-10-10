@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6868122952219476058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.029, y: 0.434, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.019805228, y: 0.019805228, z: 0.019805228}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 3
+  destroyEffect: {fileID: 3911378323585206183, guid: 63098fe653d51cd4481a07a2af41406b, type: 3}
 --- !u!50 &2671834467662013052
 Rigidbody2D:
   serializedVersion: 4
@@ -132,10 +133,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 8.800271, y: -9.247745}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: -0.03795397, y: 0.7588032}
     oldSize: {x: 16.280611, y: 34.56}
     newSize: {x: 159.99, y: 99.99375}
     adaptiveTilingThreshold: 0.5
@@ -143,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.280611, y: 34.56}
+  m_Size: {x: 15.385668, y: 33.96337}
   m_EdgeRadius: 0

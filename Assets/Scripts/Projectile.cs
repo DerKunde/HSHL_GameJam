@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
 
     public float lifeTime;
+    public ParticleSystem destroyEffect;
 
 
     private void Start()
@@ -26,12 +27,13 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+
     }
 
     void destroyProjectile()
     {
-        //TODO: Destroy Effect
-        Destroy(gameObject);
+        Instantiate(destroyEffect, transform.position, transform.rotation);
+        destroyEffect.Play();
+        Destroy(this);
     }
 }

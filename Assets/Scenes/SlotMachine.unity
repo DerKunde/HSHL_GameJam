@@ -566,11 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 1099461045061919688, guid: 66a83e9ebffc66442ab4940fadd0a17d, type: 3}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: prizes.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[0]
@@ -617,12 +617,20 @@ PrefabInstance:
       value: Schild
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
-      propertyPath: prizes.Array.data[4]
+      propertyPath: prizes.Array.data[2]
+      value: DoubleJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[3]
       value: "Gr\xF6\xDFererM\xFCnzRadius"
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
-      propertyPath: prizes.Array.data[5]
+      propertyPath: prizes.Array.data[4]
       value: "Spr\xFCngeSchlechter"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[5]
+      value: GegnerZuEinem
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: prizes.Array.data[6]
