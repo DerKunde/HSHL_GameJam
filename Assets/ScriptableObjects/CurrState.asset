@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53c0922862c7e744859ce87b058c144, type: 3}
   m_Name: CurrState
   m_EditorClassIdentifier: 
-  _coins: 1
-  _currHealth: 2
+  _coins: 0
+  _currHealth: 3
   _maxHealth: 3
   _coinsLimit: 10
+  save: {fileID: 11400000, guid: e8a2cfd9646845243945b01428d99c15, type: 2}
   negativeCoinEffected: 0

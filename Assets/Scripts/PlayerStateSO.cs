@@ -10,6 +10,7 @@ public class PlayerStateSO : ScriptableObject
     [SerializeField] private int _maxHealth;
     [SerializeField] public int _coinsLimit = 50;  //After that Limit player gets negative effects    
 
+    public PlayerStateSO save;
     public bool negativeCoinEffected = false;
 
     #region Health
@@ -30,7 +31,12 @@ public class PlayerStateSO : ScriptableObject
         _currHealth = Mathf.Clamp(value, 0, _maxHealth);
         Debug.Log("health: " + _currHealth);
         if (_currHealth.Equals(0))
+        {
             GameManager.PlayerDied();
+            this._coins = save._coins;
+            this._currHealth = save._currHealth;
+        }
+            
     }
 
     #endregion

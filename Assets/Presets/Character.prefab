@@ -197,8 +197,8 @@ MonoBehaviour:
   canDash: 1
   groundCheckDist: 0.1
   isGrounded: 1
-  dashEnabled: 0
-  doubleJumpEnabled: 0
+  dashEnabled: 1
+  doubleJumpEnabled: 1
   shieldEnabled: 0
   castJumpEnabled: 0
   debuff_enemies_to_character: 0

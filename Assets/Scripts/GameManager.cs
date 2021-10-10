@@ -87,7 +87,9 @@ public class GameManager : MonoBehaviour
     
     public static void PlayerDied()
     {
-        //ToDo: Do whatever happens when Player dies
+        var loose = GameObject.FindWithTag("UILoose");
+        loose.SetActive(true);
+        
     }
 
     public void GetDamage()
