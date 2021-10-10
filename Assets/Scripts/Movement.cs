@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
 
     public bool dashEnabled = false;
     public bool doubleJumpEnabled = false;
+    public bool shieldEnabled = false;
 
     public bool debuff_enemies_to_character = false;
 
@@ -155,4 +156,17 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(duration_s);
         col.enabled = true;
     }
+
+    public void toggleShield()
+    {
+        if (shieldEnabled)
+        {
+            shieldEnabled = false;
+        }
+        else
+        {
+            shieldEnabled = true;
+        }
+    }
+
 }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coins: 0
   _currHealth: 0
-  _maxHealth: 0
+  _maxHealth: 3
