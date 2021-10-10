@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
 {
     [SerializeField]
     private int tooManyCoins;
-    private GameObject player;
+    public GameObject player;
     private bool flyingCoin;
     private Vector2 vel;
     private PlaySound coinSound;
@@ -17,16 +17,25 @@ public class Coin : MonoBehaviour
         player = GameObject.Find("Character");
         flyingCoin = false;
         vel = new Vector2(1,0);
-        coinSound = GameObject.Find("SFX").GetComponent<PlaySound>();
+        //coinSound = GameObject.Find("SFX").GetComponent<PlaySound>();
         anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (player.GetComponent<PlayerStats>().coins > tooManyCoins)
+        //if (player.GetComponent<PlayerStats>().coins > tooManyCoins)
+        //{
+        //    ChangeColliderSize(120);
+        //}
+
+        if (player.GetComponent<GetGameManager>().gameManager != null)
         {
-            ChangeColliderSize(120);
+            if (player.GetComponent<GetGameManager>().gameManager.negativeCoinEffected())
+            {
+                ChangeColliderSize(120);
+            }
         }
+
 
         if (flyingCoin)
         {
@@ -40,8 +49,11 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        // if (collision.gameObject == player)
+        if (collision.gameObject.name == "Character")
         {
+            Debug.Log("collision");
+
             anim.enabled = false;
 
             if(GetComponent<CircleCollider2D>().radius > 12.7f)
@@ -63,7 +75,8 @@ public class Coin : MonoBehaviour
     private void CollectCoin()
     {
         coinSound.PlayCoinSound();
-        player.GetComponent<PlayerStats>().coins++;
+        //player.GetComponent<PlayerStats>().coins++;
+        player.GetComponent<GetGameManager>().gameManager.getCoins(1);
         Destroy(gameObject);
     }
 }
