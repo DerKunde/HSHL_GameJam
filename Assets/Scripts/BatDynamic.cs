@@ -31,7 +31,7 @@ public class BatDynamic : MonoBehaviour
 
     private Vector3 startpoint;
 
-    private bool dead;
+    private bool dead = false;
     
  
 
@@ -78,24 +78,28 @@ public class BatDynamic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Character")
-        {
-            if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
-            {
-                dead = true;
-                CancelInvoke("UpdatePath");
-                attacking = false;
-                GetComponent<Collider2D>().enabled = false;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -5f);
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 30, ForceMode2D.Impulse);
-                Destroy(gameObject, 1);
-            }
-            else
-            {
-                collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
-                rb.AddForce(force * (-20));
-            }
-        }
+        //if (collision.gameObject.name == "Character")
+        //{
+        //    Debug.Log(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        //    if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
+        //    {
+        //        Debug.Log("dies");
+        //        dead = true;
+        //        CancelInvoke("UpdatePath");
+        //        attacking = false;
+        //        GetComponent<Collider2D>().enabled = false;
+        //        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -5f);
+        //        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 30, ForceMode2D.Impulse);
+        //        Destroy(gameObject, 1);
+        //    }
+        //    else
+        //    {
+        //        collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
+        //        rb.AddForce(force * (-20));
+        //    }
+        //}
+        collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
+        rb.AddForce(force * (-50));
     }
 
     // Update is called once per frame
