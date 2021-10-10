@@ -21,6 +21,7 @@ public class BatDynamic : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+    private Vector2 force;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -29,6 +30,7 @@ public class BatDynamic : MonoBehaviour
     float distanceBatAndChar;
 
     private Vector3 startpoint;
+    
  
 
 
@@ -65,6 +67,16 @@ public class BatDynamic : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Character")
+        {
+            collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
+            rb.AddForce(force*(-20));
+            Debug.Log(force);
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -94,7 +106,7 @@ public class BatDynamic : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        force = direction * speed * Time.deltaTime;
 
         rb.AddForce(force);
 

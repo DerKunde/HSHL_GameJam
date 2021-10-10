@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7727529532815561709}
   - component: {fileID: 7727529532815561706}
   - component: {fileID: 7727529532815561705}
-  - component: {fileID: 6431576430655765103}
+  - component: {fileID: 1026820216913575219}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -261,3 +261,17 @@ MonoBehaviour:
   isGrounded: 1
   dashEnabled: 0
   doubleJumpEnabled: 0
+  debuff_enemies_to_character: 0
+--- !u!114 &1026820216913575219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7727529532815561707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da73a7bd2ae9b0246a8420382fe13fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
