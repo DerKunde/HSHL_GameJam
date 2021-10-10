@@ -54,47 +54,43 @@ public class SlotMachine : MonoBehaviour
 
         if (prizeWon != "" && player != null)
         {
+            var playerMovement = player.GetComponent<Movement>();
             switch (prizeWon)
             {
                 case "Schild":
                     GameObject shield1 = Instantiate(shield);
                     icon = shield1;
+                    playerMovement.shieldEnabled = true;
                     break;
                 case "Dash":
                     GameObject dash1 = Instantiate(dash);
                     icon = dash1;
+                    playerMovement.dashEnabled = true;
                     break;
                 case "Ram":
                     GameObject ram1 = Instantiate(ram);
                     icon = ram1;
+                    //playerMovement.ramEnabdled = true
                     break;
                 case "DoubleJump":
                     GameObject d_jump1 =Instantiate(d_jump);
                     icon = d_jump1;
-                    break;
-                case "SchnnlerLaufen":
-                    GameObject f_run1 = Instantiate(f_run);
-                    icon = f_run1;
-                    break;
-                case "Zeitlupe":
-                    GameObject sloMo1 = Instantiate(sloMo);
-                    icon = sloMo1;
+                    playerMovement.doubleJumpEnabled = true;
                     break;
                 case "GrößererMünzRadius":
                     GameObject magnet1 = Instantiate(magnet);
                     icon = magnet1;
+                    //enable coin magnet
                     break;
                 case "SprüngeSchlechter":
                     GameObject jump_worse1 = Instantiate(jump_worse);
                     icon = jump_worse1;
+                    playerMovement.jumpCooldown = 2f;
                     break;
                 case "GegnerZuEinem":
                     GameObject enemy_magnet1 = Instantiate(enemy_magnet);
                     icon = enemy_magnet1;
-                    break;
-                case "Langsamer":
-                    GameObject s_run1 = Instantiate(s_run);
-                    icon = s_run1;
+                    //enable enemy magnet
                     break;
             }
             icon.transform.position = player.transform.position;
@@ -173,43 +169,6 @@ public class SlotMachine : MonoBehaviour
                 started = false;
                 getPrize();
             }
-        }
-    }
-
-    void GivePlayerPowerUp()
-    {
-        switch (prizeWon)
-        {
-            case "Schild":
-                GameObject shield1 = Instantiate(shield);
-                icon = shield1;
-                break;
-            case "Dash":
-                GameObject dash1 = Instantiate(dash);
-                icon = dash1;
-                break;
-            case "Ram":
-                GameObject ram1 = Instantiate(ram);
-                icon = ram1;
-                break;
-            case "DoubleJump":
-                GameObject d_jump1 = Instantiate(d_jump);
-                icon = d_jump1;
-                break;
-            case "SchnnlerLaufen":
-                GameObject f_run1 = Instantiate(f_run);
-                icon = f_run1;
-                break;
-            case "Zeitlupe":
-                break;
-            case "GrößererMünzRadius":
-                break;
-            case "SprüngeSchlechter":
-                break;
-            case "GegnerZuEinem":
-                break;
-            case "Langsamer":
-                break;
         }
     }
 }
