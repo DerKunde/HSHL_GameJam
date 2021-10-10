@@ -37,12 +37,19 @@ public class Movement : MonoBehaviour
 
     public bool debuff_enemies_to_character = false;
 
+    private PlaySound sound;
+    private Animator anim;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _groundTrigger = GetComponent<BoxCollider2D>();
         defaultGravityScale = _rb.gravityScale;
+
+        //sound = GameObject.Find("SFX").GetComponent<PlaySound>();
+        if(GetComponent<Animator>())
+         anim = GetComponent<Animator>();
 
     }
 
@@ -114,6 +121,7 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
+        sound.PlayFootstepsSound();
         _rb.velocity = _move * moveSpeed * Vector2.right + _rb.velocity.y * Vector2.up;
     }
 

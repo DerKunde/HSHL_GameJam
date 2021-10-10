@@ -20,6 +20,7 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] GameObject animatorSlotThree;
 
     [SerializeField] GameObject shield, dash, ram, d_jump, f_run, sloMo, magnet, jump_worse, enemy_magnet, s_run;
+    private PlaySound sound;
 
     private void Awake()
     {
@@ -30,6 +31,8 @@ public class SlotMachine : MonoBehaviour
         rolling = false;
         prizeWon = "";
         player = null;
+
+        sound = GameObject.Find("SFX").GetComponent<PlaySound>();
     }
 
     void getPrize()
@@ -128,6 +131,7 @@ public class SlotMachine : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && startable)
         {
+            sound.PlaySlotmachineLeverSound();
             animator.SetBool("animationRunning", true);
             started = true;
         }

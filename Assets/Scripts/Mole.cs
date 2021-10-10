@@ -13,6 +13,13 @@ public class Mole : MonoBehaviour
 
     public Rigidbody2D projectile;
 
+    private PlaySound sound;
+
+    private void Start()
+    {
+        sound = GameObject.Find("SFX").GetComponent<PlaySound>();
+    }
+
 
     void Update()
     {
@@ -62,6 +69,7 @@ public class Mole : MonoBehaviour
 
     void LaunchProjectile()
     {
+        sound.PlayThrowSound();
         Vector2 Vo = calculateVelocity(target.position * 0.1f, transform.position, 1f);
 
         //transform.rotation = Quaternion.LookRotation(Vo);
