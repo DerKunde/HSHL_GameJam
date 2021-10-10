@@ -161,7 +161,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  debuffMultiplier: 0.9
   jumpForce: 32
   jumpCooldown: 0.2
   canJump: 1
@@ -199,6 +200,7 @@ MonoBehaviour:
   dashEnabled: 0
   doubleJumpEnabled: 0
   shieldEnabled: 0
+  castJumpEnabled: 0
   debuff_enemies_to_character: 0
 --- !u!114 &6043973643484164436
 MonoBehaviour:

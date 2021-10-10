@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
         player = GameObject.Find("Character");
         flyingCoin = false;
         vel = new Vector2(1,0);
-        //coinSound = GameObject.Find("SFX").GetComponent<PlaySound>();
+       // coinSound = GameObject.Find("SFX").GetComponent<PlaySound>();
         anim = GetComponent<Animator>();
     }
 
@@ -34,6 +34,7 @@ public class Coin : MonoBehaviour
             {
                 ChangeColliderSize(120);
             }
+            else ChangeColliderSize(12.7f);
         }
 
 

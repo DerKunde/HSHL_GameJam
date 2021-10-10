@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
     private List<SceneIndices> loadedScenes = new List<SceneIndices>();
     public List<SceneIndices> LoadedScenes => loadedScenes;
+
+    public GameObject Character;
     
     private void Awake()
     {
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
         
             var unloadLevels = GetLoadedScenes();
             StartLoading(loadLevels, unloadLevels);
+
+        
         
     }
     
@@ -106,11 +110,23 @@ public class GameManager : MonoBehaviour
     {
         int currCoins = playerState.GetCurrCoins();
         playerState.SetCoins(currCoins + coins);
+
+        if (playerState.negativeCoinEffected)
+        {
+            Character = GameObject.Find("Character");
+            Character.GetComponent<Movement>().coinDebuff(true);
+        }
     }
 
     public void looseCoins(int coins)
     {
         int currCoins = playerState.GetCurrCoins();
         playerState.SetCoins(currCoins - coins);
+
+        if (!playerState.negativeCoinEffected)
+        {
+            Character = GameObject.Find("Character");
+            Character.GetComponent<Movement>().coinDebuff(false);
+        }
     }
 }

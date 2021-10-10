@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53c0922862c7e744859ce87b058c144, type: 3}
   m_Name: CurrState
   m_EditorClassIdentifier: 
-  _coins: 0
-  _currHealth: 3
+  _coins: 1
+  _currHealth: 2
   _maxHealth: 3
+  _coinsLimit: 10
+  negativeCoinEffected: 0

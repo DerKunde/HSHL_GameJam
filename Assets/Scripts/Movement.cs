@@ -13,6 +13,9 @@ public class Movement : MonoBehaviour
     private bool _movedUp_LastFrame;
 
     [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float debuffMultiplier = 0.7f;
+    private float eternalDebuff = 1f;
+  //  [SerializeField] private float additionalMass = .1f;
 
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] public float jumpCooldown = .2f;
@@ -85,6 +88,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+       // Debug.Log(additionalMass);
     }
 
     private void Jump()
@@ -123,7 +127,7 @@ public class Movement : MonoBehaviour
     private void Move()
     {
         //sound.PlayFootstepsSound();
-        _rb.velocity = _move * moveSpeed * Vector2.right + _rb.velocity.y * Vector2.up;
+        _rb.velocity = eternalDebuff * _move * moveSpeed * Vector2.right + _rb.velocity.y * Vector2.up;
     }
 
     private IEnumerator JumpCooldown()
@@ -177,5 +181,25 @@ public class Movement : MonoBehaviour
             shieldEnabled = true;
         }
     }
+
+    public void coinDebuff(bool enabled)
+    {
+       
+        if (enabled)
+        {
+            eternalDebuff = debuffMultiplier;
+            _rb.mass = 1.9f;
+            Debug.Log("et debuff: " + eternalDebuff);
+        }
+        else
+        {
+            Debug.Log("debuff end");
+            eternalDebuff = 1;
+            _rb.mass = 1.6f;
+        }
+
+    }
+
+    
 
 }
