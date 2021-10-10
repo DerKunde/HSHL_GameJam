@@ -13,6 +13,16 @@ public class Projectile : MonoBehaviour
         Invoke("destroyProjectile", lifeTime);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Character")
+        {
+            collision.gameObject.GetComponent<GetGameManager>().gameManager.GetDamage();
+            Destroy(gameObject);
+
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
