@@ -36,6 +36,9 @@ public class BatDynamic : MonoBehaviour
  
 
 
+    private AudioSource sound;
+    private static readonly string SoundPref = "SoundPref";
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -43,7 +46,11 @@ public class BatDynamic : MonoBehaviour
         target = GameObject.Find("Character").transform;
 
         startpoint = rb.transform.position;
-        
+
+        sound = GetComponent<AudioSource>();
+        sound.volume = PlayerPrefs.GetFloat(SoundPref);
+        sound.Play();
+
     }
     void UpdatePath()
     {

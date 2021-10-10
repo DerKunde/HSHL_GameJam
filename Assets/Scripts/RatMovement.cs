@@ -21,9 +21,14 @@ public class RatMovement : MonoBehaviour
     private float x_right;
 
     private float directionToChar;
+
+    private AudioSource sound;
+    private static readonly string SoundPref = "SoundPref";
+
     void Start()
     {
         if (velocity == 0) velocity = 2;
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -103,6 +108,8 @@ public class RatMovement : MonoBehaviour
 
     void attackCharacter(float character_x)
     {
+        sound.volume = PlayerPrefs.GetFloat(SoundPref);
+        sound.Play();
         attacking = true;
         directionToChar = character_x - transform.position.x;
         Debug.Log("direction: " + directionToChar);

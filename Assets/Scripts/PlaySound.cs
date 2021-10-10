@@ -55,4 +55,9 @@ public class PlaySound : MonoBehaviour
     {
         soundAudio[9].Play();
     }
+
+    public void PlaySlotmachineWinSound()
+    {
+        soundAudio[10].Play();
+    }
 }
