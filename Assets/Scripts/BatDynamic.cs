@@ -30,9 +30,10 @@ public class BatDynamic : MonoBehaviour
     float distanceBatAndChar;
 
     private Vector3 startpoint;
-    
- 
 
+
+    private AudioSource sound;
+    private static readonly string SoundPref = "SoundPref";
 
     void Start()
     {
@@ -41,7 +42,11 @@ public class BatDynamic : MonoBehaviour
         target = GameObject.Find("Character").transform;
 
         startpoint = rb.transform.position;
-        
+
+        sound = GetComponent<AudioSource>();
+        sound.volume = PlayerPrefs.GetFloat(SoundPref);
+        sound.Play();
+
     }
     void UpdatePath()
     {

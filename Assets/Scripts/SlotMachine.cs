@@ -94,6 +94,7 @@ public class SlotMachine : MonoBehaviour
             de_buffBar = Instantiate(de_buffBar);
             de_buffBar.SetActive(true);
             icon.transform.position = player.transform.position;
+            sound.PlaySlotmachineWinSound();
             StartCoroutine(PrizeAnimation());
         }
     }
