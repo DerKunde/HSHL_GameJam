@@ -92,25 +92,4 @@ public class GameManager : MonoBehaviour
         playerState.SetHealth(currHealth-1);
         
     }
-
-    public bool negativeCoinEffected()
-    {
-        //Debug.Log("goes into method");
-        if (playerState.negativeCoinEffected)
-            return true;
-        else return false;
-        
-    }
-
-    public void getCoins(int coins)
-    {
-        int currCoins = playerState.GetCurrCoins();
-        playerState.SetCoins(currCoins + coins);
-    }
-
-    public void looseCoins(int coins)
-    {
-        int currCoins = playerState.GetCurrCoins();
-        playerState.SetCoins(currCoins - coins);
-    }
 }

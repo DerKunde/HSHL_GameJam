@@ -8,9 +8,7 @@ public class PlayerStateSO : ScriptableObject
     [SerializeField] private int _coins;
     [SerializeField] public int _currHealth;
     [SerializeField] private int _maxHealth;
-    [SerializeField] public int _coinsLimit = 50;  //After that Limit player gets negative effects    
-
-    public bool negativeCoinEffected = false;
+    
 
     #region Health
 
@@ -42,23 +40,12 @@ public class PlayerStateSO : ScriptableObject
         set => SetCoins(value);
     }
 
-
     public void SetCoins(int value)
     {
+        //ToDo: Checks if Player has to many coins => apply negative effects | and vise versa
         _coins = value;
-
-        if (_coins >= _coinsLimit)
-            negativeCoinEffected = true;
-        else negativeCoinEffected = false;
-
-        Debug.Log(_coins);
-    }
-
-    public int GetCurrCoins()
-    {
-        return _coins;
     }
 
     #endregion
-
+    
 }
