@@ -508,6 +508,22 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -4.79698
       objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182185, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: m_Size.x
+      value: 19.715857
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182185, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: m_Size.y
+      value: 101.97266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182185, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: m_Offset.x
+      value: 10.013776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182185, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: m_Offset.y
+      value: -6.733017
+      objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: ram
       value: 
@@ -549,20 +565,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099461045061919688, guid: 66a83e9ebffc66442ab4940fadd0a17d, type: 3}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: chance.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[2]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[3]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[4]
@@ -570,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[5]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[6]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: chance.Array.data[7]
@@ -591,6 +615,34 @@ PrefabInstance:
     - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
       propertyPath: prizes.Array.data[0]
       value: Schild
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[4]
+      value: "Gr\xF6\xDFererM\xFCnzRadius"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[5]
+      value: "Spr\xFCngeSchlechter"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[6]
+      value: GegnerZuEinem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195551516182189, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: prizes.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179195552502354791, guid: dbe6571e34effc9418779590e1fb6427, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe6571e34effc9418779590e1fb6427, type: 3}

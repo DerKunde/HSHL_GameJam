@@ -135,16 +135,12 @@ public class SlotMachine : MonoBehaviour
 
     IEnumerator PrizeAnimation()
     {
-        Debug.Log("icon.transform.position.x: " + icon.transform.position.x + " icon.transform.position.y: " + icon.transform.position.y);
-        Debug.Log("aim.x: " + aim.x + " aim.y: " + aim.y);
-        Debug.Log("running");
         while (Vector3.Distance(icon.transform.position, aim) > .05f)
         {
-            icon.transform.position = Vector3.Lerp(icon.transform.position, aim, 1 * Time.deltaTime);
+            icon.transform.position = Vector3.Lerp(icon.transform.position, aim, 2.5f * Time.deltaTime);
             yield return null;
         }
 
-        Debug.Log("done");
         Destroy(icon);
     }
 
@@ -173,6 +169,43 @@ public class SlotMachine : MonoBehaviour
                 started = false;
                 getPrize();
             }
+        }
+    }
+
+    void GivePlayerPowerUp()
+    {
+        switch (prizeWon)
+        {
+            case "Schild":
+                GameObject shield1 = Instantiate(shield);
+                icon = shield1;
+                break;
+            case "Dash":
+                GameObject dash1 = Instantiate(dash);
+                icon = dash1;
+                break;
+            case "Ram":
+                GameObject ram1 = Instantiate(ram);
+                icon = ram1;
+                break;
+            case "DoubleJump":
+                GameObject d_jump1 = Instantiate(d_jump);
+                icon = d_jump1;
+                break;
+            case "SchnnlerLaufen":
+                GameObject f_run1 = Instantiate(f_run);
+                icon = f_run1;
+                break;
+            case "Zeitlupe":
+                break;
+            case "GrößererMünzRadius":
+                break;
+            case "SprüngeSchlechter":
+                break;
+            case "GegnerZuEinem":
+                break;
+            case "Langsamer":
+                break;
         }
     }
 }
